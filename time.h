@@ -8,9 +8,8 @@ using namespace std::chrono;
 
 class Timer {
 public:
-    Timer(std::string name) {
-        _name = name;
-    };
+    Timer(std::string name) 
+        : _name(name) {}
     inline void start(void) {
         _start = steady_clock::now();
     }
