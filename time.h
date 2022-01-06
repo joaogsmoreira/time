@@ -12,17 +12,17 @@ public:
         _name = name;
     };
     inline void start(void) {
-        _start = high_resolution_clock::now();
+        _start = steady_clock::now();
     }
     inline void stop(void) {
-        _stop = high_resolution_clock::now();
+        _stop = steady_clock::now();
     }
     inline void print(void) {
         cout << "Time elapsed by clock " << _name << " : " << duration_cast<microseconds>(_stop - _start).count() << 
         " microseconds" << endl;
     }
 private:
-    high_resolution_clock::time_point _start, _stop;
+    steady_clock::time_point _start, _stop;
     std::string _name;
 };
 
