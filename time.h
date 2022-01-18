@@ -17,8 +17,8 @@ public:
         _stop = steady_clock::now();
     }
     inline void print(void) {
-        cout << "Time elapsed by clock " << _name << " : " << duration_cast<microseconds>(_stop - _start).count() << 
-        " microseconds" << endl;
+        cout << "Time elapsed by clock <" << _name << ">: " << duration_cast<seconds>(_stop - _start).count() << 
+        " seconds" << endl;
     }
 private:
     steady_clock::time_point _start, _stop;
