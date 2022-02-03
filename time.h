@@ -13,8 +13,11 @@ public:
     inline void start(void) {
         _start = steady_clock::now();
     }
-    inline void stop(void) {
+    inline void stop(bool print = false) {
         _stop = steady_clock::now();
+        if (print) {
+            this->print();
+        }
     }
     inline void print(void) {
         cout << "Time elapsed by clock <" << _name << ">: " << duration_cast<seconds>(_stop - _start).count() << 
